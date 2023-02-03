@@ -11,3 +11,12 @@ window.onscroll = function() {
         document.querySelector('.nav-container').style.position = "relative";
     }
 }
+document.addEventListener("DOMContentLoaded", function() {
+    const hamburgerToggle = document.getElementById("hamburger-toggle");
+    const hamburgerMenu = document.getElementById("hamburger-menu");
+    
+    hamburgerToggle.addEventListener("click", function() {
+      hamburgerMenu.classList.toggle("hidden");
+    });
+  });
+  
