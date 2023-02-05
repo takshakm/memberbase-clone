@@ -2,22 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 .custom-gradient {
-    background-image: radial-gradient(circle farthest-corner at 25% -20%, rgba(122, 167, 255, 0.15), hsla(0, 0%, 100%, 0) 52%), radial-gradient(circle farthest-corner at 100% 0%, rgba(255, 1, 1, 0.08), hsla(0, 0%, 100%, 0) 25%);
+  background-image: radial-gradient(
+      circle farthest-corner at 25% -20%,
+      rgba(122, 167, 255, 0.15),
+      hsla(0, 0%, 100%, 0) 52%
+    ),
+    radial-gradient(
+      circle farthest-corner at 100% 0%,
+      rgba(255, 1, 1, 0.08),
+      hsla(0, 0%, 100%, 0) 25%
+    );
 }
 #mySearch:focus {
-    outline: 1px solid lightgray
-  }
-  
-  #mySearch:hover {
-    outline: 1px solid lightgray;
-  }
+  outline: 1px solid lightgray;
+}
 
-#myButton:hover{
+#mySearch:hover {
+  outline: 1px solid lightgray;
+}
+
+#myButton:hover {
   opacity: 70%;
 }
-.custom-light-gradient{
+.custom-light-gradient {
   background-color: #f5f6f7;
-  background-image: linear-gradient(54deg, rgba(255, 131, 122, 0.25), rgba(255, 131, 122, 0) 28%), linear-gradient(241deg, rgba(239, 152, 207, 0.25), rgba(239, 152, 207, 0) 36%);
+  background-image: linear-gradient(
+      54deg,
+      rgba(255, 131, 122, 0.25),
+      rgba(255, 131, 122, 0) 28%
+    ),
+    linear-gradient(
+      241deg,
+      rgba(239, 152, 207, 0.25),
+      rgba(239, 152, 207, 0) 36%
+    );
 }
 .container {
   position: relative;
@@ -78,7 +96,8 @@
   -webkit-transition: opacity 200ms ease, -webkit-transform 200ms ease;
   transition: opacity 200ms ease, -webkit-transform 200ms ease;
   transition: transform 200ms ease, opacity 200ms ease;
-  transition: transform 200ms ease, opacity 200ms ease, -webkit-transform 200ms ease;
+  transition: transform 200ms ease, opacity 200ms ease,
+    -webkit-transform 200ms ease;
   color: #1d1d1d;
   text-align: left;
 }
@@ -86,8 +105,17 @@
 .ebook-box:hover {
   transform: translateY(-20px);
 }
-.custom-black-gradient{
+.custom-black-gradient {
   background-color: #1d1d1d;
-  background-image: radial-gradient(circle farthest-corner at 0% 50%, rgba(255, 1, 1, 0.15), transparent 47%), radial-gradient(circle farthest-corner at 40% 130%, rgba(122, 167, 255, 0.41), transparent 58%);
+  background-image: radial-gradient(
+      circle farthest-corner at 0% 50%,
+      rgba(255, 1, 1, 0.15),
+      transparent 47%
+    ),
+    radial-gradient(
+      circle farthest-corner at 40% 130%,
+      rgba(122, 167, 255, 0.41),
+      transparent 58%
+    );
   color: #fff;
 }

@@ -1,172 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./input.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./input.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
     <script src="./events.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Memberbase - Webflow Membership</title>
-</head>
-<body>
+  </head>
+  <body>
     <!--Top Announcement Bar-->
-    <div class="custom-gradient font-sans text-sm font-medium py-3 text-center text-gray-800 ">
-        A Webflow membership template for resource websites.
-        <a rel="stylesheet" href="#" class="font-sans text-sm font-medium text-gray-400 hover:text-gray-800">See all templates ></a>
+    <div
+      class="custom-gradient font-sans text-sm font-medium py-3 text-center text-gray-800"
+    >
+      A Webflow membership template for resource websites.
+      <a
+        rel="stylesheet"
+        href="#"
+        class="font-sans text-sm font-medium text-gray-400 hover:text-gray-800"
+        >See all templates ></a
+      >
     </div>
     <!-- Navigation Bar -->
     <div id="navbar" class="flex items-center nav-container mx-8 p-2 sm:mx-12">
-        <img src="./public/images/logo.png" alt="logo" class="cursor-pointer w-44 p-2 hover:opacity-70">
-        <div class="relative ml-10 hidden sm:block">
-            <input type="search" id="mySearch" class="p-2 bg-gray-100 rounded-md border-white pl-10" placeholder="Search Resources">
-            <i class="fas fa-search text-gray-600 absolute left-2 top-0 mt-3 mr-3" style="pointer-events: none;"></i>
-        </div>
-        <div class="flex items-center ml-auto p-2 hidden md:block">
-            <a href="#" class="font-medium text-gray-400 transition-colors duration-300 hover:text-gray-800 mr-5">All Resources</a>
-            <a href="#" class="font-medium text-gray-400 transition-colors duration-300 hover:text-gray-800 mr-5">Log In</a>
-            <button id="myButton" class="bg-black text-white p-2 rounded-lg">Free Sign Up</button>
-        </div>
-        <div id="hamburger-toggle" class="sm:hidden">
-            <button id="menu-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-700 hover:border-gray-800">
-                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" ><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-            </button>
-        </div>        
-        <div id="hamburger-menu" class="hidden p-2 bg-white absolute right-0 top-0 mt-12 rounded-lg shadow-md">
-            <a href="#" class="block p-2 font-medium text-gray-400 transition-colors duration-300 hover:text-gray-800">All Resources</a>
-            <a href="#" class="block p-2 font-medium text-gray-400 transition-colors duration-300 hover:text-gray-800">Log In</a>
-            <button id="hamburger-button" class="block p-2 bg-black text-white rounded-lg">Free Sign Up</button>
-        </div>
+      <img
+        src="./public/images/logo.png"
+        alt="logo"
+        class="cursor-pointer w-44 p-2 hover:opacity-70"
+      />
+      <div class="relative ml-10 hidden sm:block">
+        <input
+          type="search"
+          id="mySearch"
+          class="p-2 bg-gray-100 rounded-md border-white pl-10"
+          placeholder="Search Resources"
+        />
+        <i
+          class="fas fa-search text-gray-600 absolute left-2 top-0 mt-3 mr-3"
+          style="pointer-events: none"
+        ></i>
+      </div>
+      <div class="flex items-center ml-auto p-2 hidden md:block">
+        <a
+          href="#"
+          class="font-medium text-gray-400 transition-colors duration-300 hover:text-gray-800 mr-5"
+          >All Resources</a
+        >
+        <a
+          href="#"
+          class="font-medium text-gray-400 transition-colors duration-300 hover:text-gray-800 mr-5"
+          >Log In</a
+        >
+        <button id="myButton" class="bg-black text-white p-2 rounded-lg">
+          Free Sign Up
+        </button>
+      </div>
+      <div id="hamburger-toggle" class="sm:hidden">
+        <button
+          id="menu-toggle"
+          class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-700 hover:border-gray-800"
+        >
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+      <div
+        id="hamburger-menu"
+        class="hidden p-2 bg-white absolute right-0 top-0 mt-12 rounded-lg shadow-md"
+      >
+        <a
+          href="#"
+          class="block p-2 font-medium text-gray-400 transition-colors duration-300 hover:text-gray-800"
+          >All Resources</a
+        >
+        <a
+          href="#"
+          class="block p-2 font-medium text-gray-400 transition-colors duration-300 hover:text-gray-800"
+          >Log In</a
+        >
+        <button
+          id="hamburger-button"
+          class="block p-2 bg-black text-white rounded-lg"
+        >
+          Free Sign Up
+        </button>
+      </div>
     </div>
     <!--Maine Display-->
     <div class="custom-light-gradient">
-        <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row">
-          <div class="w-full md:w-1/2 md:order-2">
-            <img src="./public/images/design.png" loading="eager" alt="" class="design-img md:h-72">
-          </div>
-          <div class="w-full md:w-1/2 text-center md:text-left">
-            <h1 class="text-5xl font-medium leading-tight">Access a library of <br> free design resources</h1>
-            <p class="text-base font-light leading-normal py-8">The best resources and books from around the web,<br> collected and curated for your reading.</p>
-            <a href="#" class="bg-gray-900 duration-100 hover:bg-gray-800 text-white font-medium py-2 px-4 rounded">Get Access Now</a>
-          </div>
+      <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row">
+        <div class="w-full md:w-1/2 md:order-2">
+          <img
+            src="./public/images/design.png"
+            loading="eager"
+            alt=""
+            class="design-img md:h-72"
+          />
+        </div>
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <h1 class="text-5xl font-medium leading-tight">
+            Access a library of <br />
+            free design resources
+          </h1>
+          <p class="text-base font-light leading-normal py-8">
+            The best resources and books from around the web,<br />
+            collected and curated for your reading.
+          </p>
+          <a
+            href="#"
+            class="bg-gray-900 duration-100 hover:bg-gray-800 text-white font-medium py-2 px-4 rounded"
+            >Get Access Now</a
+          >
         </div>
       </div>
-      
+    </div>
+
     <!--Cards Section-->
     <div class="flex items-center container justify-between mx-80 px-12 py-20">
-        <h2 class="text-2xl font-medium">Featured Resources</h2>
-        <a href="#" class="bg-gray-100 text-gray-600 px-3 py-2 rounded-lg duration-300 hover:bg-gray-200">See All Resources</a>
+      <h2 class="text-2xl font-medium">Featured Resources</h2>
+      <a
+        href="#"
+        class="bg-gray-100 text-gray-600 px-3 py-2 rounded-lg duration-300 hover:bg-gray-200"
+        >See All Resources</a
+      >
     </div>
     <div class="container mx-80 px-12">
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <div class="ebook-box ">
-                <a href="#" class="ebook-thumbnail ">
-                    <img src="./public/images/ebook-cover1.png" alt="Grids &amp; Alignment" class="w-full">
-                </a>
-                <div class="text-sm text-gray-400 py-2">By Nikolai Bain</div>
-                <a href="#" class="text-gray-400 py-2">
-                    <h2 class="text-xl font-medium text-gray-700 py-2">Grids &amp; Alignment</h2>
-                    <p class="text-sm">The pleasure of the flight of our toil, and to us to follow the well-equipped, and may please him. Every reason. Rejected from being rejected. There is no pain for the happy time of these manufacturers. Outdoor mainstream offices.</p>
-                </a>
-            </div>
-            <div class="ebook-box">
-                <a href="#" class="ebook-thumbnail">
-                    <img src="./public/images/ebook-cover2.png" alt="Grids &amp; Alignment" class="w-full">
-                </a>
-                <div class="text-sm text-gray-400 py-2">By Maxwell Milton</div>
-                <a href="#" class="text-gray-400 py-2">
-                    <h2 class="text-xl font-medium text-gray-700 py-2">Grids &amp; Alignment</h2>
-                    <p class="text-sm">Rejecting the more severe than the less he will reject it, and they were excepturi. Often, the discomfort of prosecutors and runs either.</p>
-                </a>
-            </div>
-            <div class="ebook-box">
-                <a href="#" class="ebook-thumbnail">
-                    <img src="./public/images/ebook-cover3.png" alt="Grids &amp; Alignment" class="w-full">
-                </a>
-                <div class="text-sm text-gray-400 py-2">By Franko Realguy</div>
-                <a href="#" class="text-gray-400 py-2">
-                    <h2 class="text-xl font-medium text-gray-700 py-2">Grids &amp; Alignment</h2>
-                    <p class="text-sm">Design Systems in Product Teams
-                        In order to free the troubles I called and is bound to be welcomed pleasure. He consumer offices him. He hates all the more severe pain because they encounter the destruction.</p>
-                </a>
-            </div>
-            <div class="ebook-box">
-                <a href="#" class="ebook-thumbnail">
-                    <img src="./public/images/ebook-cover4.png" alt="Grids &amp; Alignment" class="w-full">
-                </a>
-                <div class="text-sm text-gray-400 py-2 ">By Nikolai Bain</div>
-                <a href="#" class="text-gray-400 py-2">
-                    <h2 class="text-xl font-medium text-gray-700 py-2">Grids &amp; Alignment</h2>
-                    <p class="text-sm mb-20">Or else, to be assumed, and in the time of the discoverer of the other. But it is not reject the accusation of either. He hates not in order to find fault with the consequences of some. Or something to achieve</p>
-                </a>
-            </div>
-            <div class="ebook-box">
-                <a href="#" class="ebook-thumbnail">
-                    <img src="./public/images/ebook-cover5.png" alt="Grids &amp; Alignment" class="w-full">
-                </a>
-                <div class="text-sm text-gray-400 py-2 ">By Tim Tommons</div>
-                <a href="#" class="text-gray-400 py-2">
-                    <h2 class="text-xl font-medium text-gray-700 py-2">Grids &amp; Alignment</h2>
-                    <p class="text-sm mb-20">For the pleasure of the pain of the blind, or the very fact that he was selected for Ding. The small rejection of those who are rejected. And for nothing to say. Life and so on. The distinction between laborious truth. It is less because they have to.</p>
-                </a>
-            </div>
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div class="ebook-box">
+          <a href="#" class="ebook-thumbnail">
+            <img
+              src="./public/images/ebook-cover1.png"
+              alt="Grids &amp; Alignment"
+              class="w-full"
+            />
+          </a>
+          <div class="text-sm text-gray-400 py-2">By Nikolai Bain</div>
+          <a href="#" class="text-gray-400 py-2">
+            <h2 class="text-xl font-medium text-gray-700 py-2">
+              Grids &amp; Alignment
+            </h2>
+            <p class="text-sm">
+              The pleasure of the flight of our toil, and to us to follow the
+              well-equipped, and may please him. Every reason. Rejected from
+              being rejected. There is no pain for the happy time of these
+              manufacturers. Outdoor mainstream offices.
+            </p>
+          </a>
         </div>
+        <div class="ebook-box">
+          <a href="#" class="ebook-thumbnail">
+            <img
+              src="./public/images/ebook-cover2.png"
+              alt="Grids &amp; Alignment"
+              class="w-full"
+            />
+          </a>
+          <div class="text-sm text-gray-400 py-2">By Maxwell Milton</div>
+          <a href="#" class="text-gray-400 py-2">
+            <h2 class="text-xl font-medium text-gray-700 py-2">
+              Grids &amp; Alignment
+            </h2>
+            <p class="text-sm">
+              Rejecting the more severe than the less he will reject it, and
+              they were excepturi. Often, the discomfort of prosecutors and runs
+              either.
+            </p>
+          </a>
+        </div>
+        <div class="ebook-box">
+          <a href="#" class="ebook-thumbnail">
+            <img
+              src="./public/images/ebook-cover3.png"
+              alt="Grids &amp; Alignment"
+              class="w-full"
+            />
+          </a>
+          <div class="text-sm text-gray-400 py-2">By Franko Realguy</div>
+          <a href="#" class="text-gray-400 py-2">
+            <h2 class="text-xl font-medium text-gray-700 py-2">
+              Grids &amp; Alignment
+            </h2>
+            <p class="text-sm">
+              Design Systems in Product Teams In order to free the troubles I
+              called and is bound to be welcomed pleasure. He consumer offices
+              him. He hates all the more severe pain because they encounter the
+              destruction.
+            </p>
+          </a>
+        </div>
+        <div class="ebook-box">
+          <a href="#" class="ebook-thumbnail">
+            <img
+              src="./public/images/ebook-cover4.png"
+              alt="Grids &amp; Alignment"
+              class="w-full"
+            />
+          </a>
+          <div class="text-sm text-gray-400 py-2">By Nikolai Bain</div>
+          <a href="#" class="text-gray-400 py-2">
+            <h2 class="text-xl font-medium text-gray-700 py-2">
+              Grids &amp; Alignment
+            </h2>
+            <p class="text-sm mb-20">
+              Or else, to be assumed, and in the time of the discoverer of the
+              other. But it is not reject the accusation of either. He hates not
+              in order to find fault with the consequences of some. Or something
+              to achieve
+            </p>
+          </a>
+        </div>
+        <div class="ebook-box">
+          <a href="#" class="ebook-thumbnail">
+            <img
+              src="./public/images/ebook-cover5.png"
+              alt="Grids &amp; Alignment"
+              class="w-full"
+            />
+          </a>
+          <div class="text-sm text-gray-400 py-2">By Tim Tommons</div>
+          <a href="#" class="text-gray-400 py-2">
+            <h2 class="text-xl font-medium text-gray-700 py-2">
+              Grids &amp; Alignment
+            </h2>
+            <p class="text-sm mb-20">
+              For the pleasure of the pain of the blind, or the very fact that
+              he was selected for Ding. The small rejection of those who are
+              rejected. And for nothing to say. Life and so on. The distinction
+              between laborious truth. It is less because they have to.
+            </p>
+          </a>
+        </div>
+      </div>
     </div>
     <!--Dark Section-->
     <div class="custom-black-gradient py-12 px-4">
-        <div class="container mx-auto opacity-100">
-            <div class="text-center max-w-550">
-                <h2 class="text-white text-4xl font-bold">Get more great resources</h2>
-                <p class="text-white text-2xl mb-8">Get the latest design resources from across the web.<br> Straight to your inbox.</p>
-                <form class="w-full max-w-sm mx-auto mb-8">
-                    <input type="email" id="mySearch" class=" py-4 px-4 rounded-xl" placeholder="Enter your Email">
-                    <button class="py-4 px-4 bg-gray-500 rounded-xl duration-500 hover:bg-gray-700">Subscribe</button>
-                </form>
-            </div>
+      <div class="container mx-auto opacity-100">
+        <div class="text-center max-w-550">
+          <h2 class="text-white text-4xl font-bold">
+            Get more great resources
+          </h2>
+          <p class="text-white text-2xl mb-8">
+            Get the latest design resources from across the web.<br />
+            Straight to your inbox.
+          </p>
+          <form class="w-full max-w-sm mx-auto mb-8">
+            <input
+              type="email"
+              id="mySearch"
+              class="py-4 px-4 rounded-xl"
+              placeholder="Enter your Email"
+            />
+            <button
+              class="py-4 px-4 bg-gray-500 rounded-xl duration-500 hover:bg-gray-700"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
+      </div>
     </div>
     <!--Footer Section-->
-    <footer class="text-gray-500 flex items-center container justify-between mx-80 px-12 py-20">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-2 gap-12 sm:grid-cols-4">
-                <div class="flex flex-col">
-                    <a href="#" aria-current="page" class="footer-logo w-nav-brand w--current">
-                        <img src="./public/images/logo.png" width="204" alt="Memberbase Logo">
-                    </a>
-                    <p class="text-sm mt-6">Built by <a href="https://www.github.com/takshakm" target="_blank" class="underline">Takshak Mudgal</a>.<br>Powered by 
-                        <a href="http://www.webflow.com" target="_blank" class="underline">Webflow</a>.
-                    </p>
-                    <div class="mt-6 text-sm">© 2022 Memberbase. All Rights Reserved.</div>
-                </div>
-                <div class="flex flex-col">
-                    <h5 class="text-sm font-medium mb-4">Website</h5>
-                    <a href="#" aria-current="page" class="footer-link w--current">Home</a>   
-                    <a href="#" class="footer-link">Resources</a>
-                    <a href="#" class="footer-link">Contact</a>
-                    <a href="#" class="footer-link">Ebook (CMS)</a>
-                    <a href="#" class="footer-link">Terms &amp; Conditions</a>
-                    <a href="#" class="footer-link">Privacy Policy</a>
-                </div>
-                <div class="flex flex-col">
-                    <h5 class="text-sm font-medium mb-4">Membership</h5>
-                    <a href="#" class="footer-link">Sign In</a>
-                    <a href="#" class="footer-link">Sign Up</a>
-                    <a href="#" class="footer-link">User Account</a>
-                    <a href="#" class="footer-link">Reset Password</a>
-                </div>
-                <div class="flex flex-col">
-                    <h5 class="text-sm font-medium mb-4">Admin</h5>
-                    <a href="#" class="footer-link">Style Guide</a>
-                    <a href="#" class="footer-link">Licenses</a>
-                    <a href="#" class="footer-link">Instructions</a>
-                    <a href="#" class="footer-link">Password</a>
-                    <a href="#" class="footer-link">404</a>
-                </div>
+    <footer
+      class="text-gray-500 flex items-center container justify-between mx-80 px-12 py-20"
+    >
+      <div class="container mx-auto">
+        <div class="grid grid-cols-2 gap-12 sm:grid-cols-4">
+          <div class="flex flex-col">
+            <a
+              href="#"
+              aria-current="page"
+              class="footer-logo w-nav-brand w--current"
+            >
+              <img
+                src="./public/images/logo.png"
+                width="204"
+                alt="Memberbase Logo"
+              />
+            </a>
+            <p class="text-sm mt-6">
+              Built by
+              <a
+                href="https://www.github.com/takshakm"
+                target="_blank"
+                class="underline"
+                >Takshak Mudgal</a
+              >.<br />Powered by
+              <a href="http://www.webflow.com" target="_blank" class="underline"
+                >Webflow</a
+              >.
+            </p>
+            <div class="mt-6 text-sm">
+              © 2022 Memberbase. All Rights Reserved.
             </div>
+          </div>
+          <div class="flex flex-col">
+            <h5 class="text-sm font-medium mb-4">Website</h5>
+            <a href="#" aria-current="page" class="footer-link w--current"
+              >Home</a
+            >
+            <a href="#" class="footer-link">Resources</a>
+            <a href="#" class="footer-link">Contact</a>
+            <a href="#" class="footer-link">Ebook (CMS)</a>
+            <a href="#" class="footer-link">Terms &amp; Conditions</a>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </div>
+          <div class="flex flex-col">
+            <h5 class="text-sm font-medium mb-4">Membership</h5>
+            <a href="#" class="footer-link">Sign In</a>
+            <a href="#" class="footer-link">Sign Up</a>
+            <a href="#" class="footer-link">User Account</a>
+            <a href="#" class="footer-link">Reset Password</a>
+          </div>
+          <div class="flex flex-col">
+            <h5 class="text-sm font-medium mb-4">Admin</h5>
+            <a href="#" class="footer-link">Style Guide</a>
+            <a href="#" class="footer-link">Licenses</a>
+            <a href="#" class="footer-link">Instructions</a>
+            <a href="#" class="footer-link">Password</a>
+            <a href="#" class="footer-link">404</a>
+          </div>
         </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
 <!---------------------------------------------------------------------------------------------------------------------------->
